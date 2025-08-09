@@ -1,4 +1,4 @@
-package com.example.userprofileroomdb
+package com.example.userprofileroomdb.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

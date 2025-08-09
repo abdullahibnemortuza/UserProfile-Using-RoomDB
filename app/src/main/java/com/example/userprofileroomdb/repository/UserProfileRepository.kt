@@ -1,9 +1,11 @@
-package com.example.userprofileroomdb
+package com.example.userprofileroomdb.repository
 
 import androidx.lifecycle.LiveData
+import com.example.userprofileroomdb.model.UserProfileDao
+import com.example.userprofileroomdb.model.UserProfile
 
 class UserProfileRepository(private val userProfileDao: UserProfileDao) {
-    fun getUserProfiles():LiveData<List<UserProfile>>{
+    fun getUserProfiles(): LiveData<List<UserProfile>> {
         return userProfileDao.getAllUserProfile()
     }
 

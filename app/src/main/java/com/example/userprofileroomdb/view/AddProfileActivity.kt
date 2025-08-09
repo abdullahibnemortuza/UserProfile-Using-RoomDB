@@ -1,14 +1,14 @@
-package com.example.userprofileroomdb
+package com.example.userprofileroomdb.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import com.example.userprofileroomdb.view.ProfileListActivity
+import com.example.userprofileroomdb.viewmodel.UserProfileViewModel
 import com.example.userprofileroomdb.databinding.ActivityAddProfileBinding
+import com.example.userprofileroomdb.model.UserProfile
 
 class AddProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddProfileBinding
@@ -33,7 +33,7 @@ class AddProfileActivity : AppCompatActivity() {
             profileViewModel.insertUserProfile(newUser)
 
             Toast.makeText(this, "Profile Added", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this,ProfileListActivity::class.java))
+            startActivity(Intent(this, ProfileListActivity::class.java))
             finish()
         }
     }

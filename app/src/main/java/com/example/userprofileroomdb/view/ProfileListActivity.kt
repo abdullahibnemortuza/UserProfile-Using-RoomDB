@@ -1,16 +1,13 @@
-package com.example.userprofileroomdb
+package com.example.userprofileroomdb.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.userprofileroomdb.view.adapter.ProfileAdapter
+import com.example.userprofileroomdb.view.UpdateProfileActivity
+import com.example.userprofileroomdb.viewmodel.UserProfileViewModel
 import com.example.userprofileroomdb.databinding.ActivityProfileListBinding
 
 class ProfileListActivity : AppCompatActivity() {
@@ -23,7 +20,7 @@ class ProfileListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.addProfileBtn.setOnClickListener {
-            startActivity(Intent(this,AddProfileActivity::class.java))
+            startActivity(Intent(this, AddProfileActivity::class.java))
             finish()
         }
 
@@ -32,8 +29,9 @@ class ProfileListActivity : AppCompatActivity() {
         binding.profileRecyclerView.layoutManager = LinearLayoutManager(this)
 
         profileViewModel.getUserProfiles().observe(this){ profile ->
-            profileAdapter = ProfileAdapter(profile,
-                onItemClick = {user ->
+            profileAdapter = ProfileAdapter(
+                profile,
+                onItemClick = { user ->
                     val intent = Intent(this, ProfileDetailsActivity::class.java).apply {
                         putExtra("name", user.name)
                         putExtra("email", user.email)
@@ -43,10 +41,10 @@ class ProfileListActivity : AppCompatActivity() {
                     }
                     startActivity(intent)
                 },
-                onDeleteClick = {user ->
+                onDeleteClick = { user ->
                     profileViewModel.deleteUserProfile(user)
                 },
-                onUpdateClick = {user ->
+                onUpdateClick = { user ->
                     val intent2 = Intent(this, UpdateProfileActivity::class.java).apply {
                         putExtra("id", user.id)
                         putExtra("name", user.name)

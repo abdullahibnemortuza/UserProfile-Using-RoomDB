@@ -1,4 +1,4 @@
-package com.example.userprofileroomdb
+package com.example.userprofileroomdb.model
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -19,5 +19,5 @@ interface UserProfileDao {
     suspend fun delete(userProfile: UserProfile)
 
     @Query("SELECT * FROM user_profile")
-    fun getAllUserProfile():LiveData<List<UserProfile>>
+    fun getAllUserProfile(): LiveData<List<UserProfile>>
 }

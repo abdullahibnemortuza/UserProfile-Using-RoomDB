@@ -1,10 +1,10 @@
-package com.example.userprofileroomdb
+package com.example.userprofileroomdb.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.userprofileroomdb.databinding.ProfileItemLayoutBinding
+import com.example.userprofileroomdb.model.UserProfile
 
 class ProfileAdapter(
     private val userList: List<UserProfile>,

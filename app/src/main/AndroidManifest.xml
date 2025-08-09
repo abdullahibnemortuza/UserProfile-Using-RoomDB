@@ -12,19 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UserprofileRoomDB">
         <activity
-            android:name=".UpdateProfileActivity"
+            android:name=".view.UpdateProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileDetailsActivity"
+            android:name=".view.ProfileDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".AddProfileActivity"
+            android:name=".view.AddProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileListActivity"
+            android:name=".view.ProfileListActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

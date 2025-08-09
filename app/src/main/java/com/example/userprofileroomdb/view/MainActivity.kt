@@ -1,11 +1,9 @@
-package com.example.userprofileroomdb
+package com.example.userprofileroomdb.view
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.userprofileroomdb.view.ProfileListActivity
 import com.example.userprofileroomdb.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.profileListBtn.setOnClickListener {
-            startActivity(Intent(this@MainActivity,ProfileListActivity::class.java))
+            startActivity(Intent(this@MainActivity, ProfileListActivity::class.java))
             finish()
         }
-        
+
     }
 }
